@@ -19,13 +19,13 @@
 If you want to try this out for yourself, please download the included .zip folder. All required libraries can be installed on pip.
 
 The following libraries are required for using the scripts:
-OS
-html
-requests
-json
-argparse
-Collections
-csv
+OS,
+html,
+requests,
+json,
+argparse,
+Collections,
+csv,
 datetime
 
 All of these can be found in Python's Pip. You will need Python 3.
