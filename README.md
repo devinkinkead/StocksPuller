@@ -9,4 +9,9 @@
  
  MainMenuAll.py - This is purely for automation. It will process all text files in the "Lists" folder upon running it. It invokes DataUpdate.py and Cruncher.py. I use this combined with Windows Task Sceduler on one of my virual machines to provide myself with daily reports about stocks.
  
-If you want to try this out for yourself, please download the included .zip folder. I have not yet included an executable (.exe) version.
+If you want to try this out for yourself, please download the included .zip folder. The one you should select is as follows:
+
+If you want to take the time to download the available libraries (All available on Pip) and edit the source code to suit your needs, Feel free to download the ProjectFiles.zip folder.
+
+If you just want to give it a test drive, download the StockProgramEXE.zip folder.
+
