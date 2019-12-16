@@ -13,5 +13,5 @@ If you want to try this out for yourself, please download the included .zip fold
 
 If you want to take the time to download the available libraries (All available on Pip) and edit the source code to suit your needs, Feel free to download the ProjectFiles.zip folder.
 
-If you just want to give it a test drive, download the StockProgramEXE.zip folder.
+If you just want to give it a test drive, download the StockProgramEXE.zip folder. And run the MainMenu.exe file. Please note: I do not use the executable version on any regular basis. It has not been vetted for regular usage.
 
