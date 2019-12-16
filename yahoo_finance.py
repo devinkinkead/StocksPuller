@@ -1,6 +1,5 @@
 from lxml import html
 import requests
-from time import sleep
 import json
 import argparse
 from collections import OrderedDict

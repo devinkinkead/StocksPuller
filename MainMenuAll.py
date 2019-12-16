@@ -1,5 +1,4 @@
 import os
-import time
 import Cruncher as cruncher
 import DataUpdate as dataUpdate
 while True:

@@ -1,5 +1,4 @@
 import os
-import time
 import yahoo_finance as yahoo
 
 
