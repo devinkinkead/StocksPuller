@@ -10,7 +10,7 @@
  
  Yahoo_Finance.py - This script pulls stock data from Yahoo Finance. Saves data into .json file.
  
- DataUpdate.py - Reads each line of selected text file with a list of stock tickers, and passes that ticket to Yahoo_Finance.py for data retireval
+ DataUpdate.py - Reads each line of selected text file with a list of stock tickers, and passes that ticker to Yahoo_Finance.py for data retireval
  
  Cruncher.py - Processes .json file information, and writes it into an .csv file
  
@@ -29,3 +29,6 @@ csv,
 datetime
 
 All of these can be found in Python's Pip. You will need Python 3.
+
+
+NOTE: Please do not run multiple threads of the MainMenu script at once. It will technically work, but Yahoo Finance will fail to provide valid data. I have found many .json files to be saved as null when I tried this.
