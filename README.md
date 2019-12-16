@@ -1,6 +1,6 @@
 # StocksPuller
- This program is a pet project of mine. I have recently started investing for my retirement. In my portfolio, I have reserved a small 
- amount of cash to dedicate to stock trading. I noticed it was somewhat difficult to find companies to invest in outside of the "Hottest 4 stocks to buy right now" blogs. To make my life easier, I took a script I had found online for pulling data from Yahoo Finance, and I heavily modified it to suit my needs. I then built a program around the script to turn lists of stock tickers into Excel spreadsheets of financial data.
+ This program is a pet project of mine. I have recently started investing for my retirement, and I have reserved a small 
+ amount of cash to dedicate to stock trading in my portfolio. I noticed it was somewhat difficult to find companies to invest in outside of the "Hottest 4 stocks to buy right now" blogs. To make my life easier, I took a script I had found online for pulling data from Yahoo Finance, and I heavily modified it to suit my needs. I then built a program around the script to turn lists of stock tickers into Excel spreadsheets of financial data.
  
  
  
