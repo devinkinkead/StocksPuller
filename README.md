@@ -31,4 +31,4 @@ datetime
 All of these can be found in Python's Pip. You will need Python 3.
 
 
-NOTE: Please do not run multiple instances of the MainMenu script at once. It won't crash, but Yahoo Finance will fail to provide valid data. I have found many .json files to be saved as null when I tried this. Normally, i have a <1% null file rate with a list of 3000 stocks. If i run multiple instances to process multiple files, howver the null rate is closer to 20% or so.
+NOTE: Please do not run multiple instances of the MainMenu script at once. It won't crash, but Yahoo Finance will fail to provide valid data, largely defeating the purpose of the program. I have found many .json files to be saved as null when I tried this. Normally, i have a <1% null query rate with a list of 3000 stocks. If i run multiple instances to process multiple files, howver the null rate is closer to 20% or so. 
