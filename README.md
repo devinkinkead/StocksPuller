@@ -16,7 +16,7 @@
  
  MainMenuAll.py - This is purely for automation. It will process all text files in the "Lists" folder upon running it (see .zip file). It invokes DataUpdate.py and Cruncher.py. I use this script, combined with Windows Task Sceduler, on one of my virual machines to provide myself with daily reports about stocks.
  
-If you want to try this out for yourself, please download the included .zip file. All required libraries can be installed on pip.
+If you want to try this out for yourself, please download the included ProjectFiles.zip file. All required libraries can be installed on pip.
 
 The following libraries are required for using the scripts:
 OS,
@@ -28,7 +28,7 @@ Collections,
 csv,
 datetime
 
-All of these can be found in Python's Pip. You will need Python 3.
+All of these can be found in Python's Pip. You will need Python 3. I am using Python 3.7 64 bit on Windows 10.
 
 
 
