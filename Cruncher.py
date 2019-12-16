@@ -1,73 +1,76 @@
 import os
 import json
+import csv
+from datetime import date
+
+def main(folderName,dname):
+    #Get path of mainMenu file. Will be a base reference point in this file.
+    os.chdir(dname)
+    dataPull(folderName,dname)
 
 
-def main():
-    dataPull()
+def dataPull(folderName,dname):
+    nullCount = 0
+    os.chdir(dname)
+    os.chdir(r"Lists")
+    try: 
+        file = open(folderName+'.txt')
+        csvName = fileHeader(folderName,dname)
+        for line in file: #file is the .txt file with list of stocks.
+            text = line
+            text = text.replace("\n", "")
+            
+            #Navigate to stocks folder
+            os.chdir(dname)
+            os.chdir(r"Stocks")   
+            os.chdir(folderName)
 
+            try: #.json file should be named after each ticker on the list
+                with open(text + ".json") as jFile:
+                    data = json.load(jFile)
+                    os.chdir(dname)
+                    os.chdir(r"QueryResults")
+                    newFile = open(csvName,"a+")
+                    with newFile:
+                        writer = csv.writer(newFile)
+                        writer.writerow(data.values())
+                        
+                             
+                                
+                    
+                    
+                print(str(text + ".json"+" Processed") )  
+                
+            except FileNotFoundError: #Happens when .json file doesn't exist. 
+                 print(str(text + ".json"+" Not Processed. Doesn't Exist"))
+                 
 
-def dataPull():
-    os.chdir(r"QueryResults")
+            except TypeError: #Happens when file is null when pulling down from Yahoo.
+                print(str(text + ".json"+" Not Processed. Null File"))
+                
+                
 
-    with open(r'Data.txt', "w+") as newFile:
-        newFile.write(str("Ticker"))
-        newFile.write(":")
-        newFile.write(str("1 Year Target"))
-        newFile.write(":")
-        newFile.write(str("Current Price"))
-        newFile.write(":")
-        newFile.write(str("Beta"))
-        newFile.write(":")
-        newFile.write(str("Earnings Per Share"))
-        newFile.write(":")
-        newFile.write(str("Price to Book"))
-        newFile.write(":")
-        newFile.write(str("Price/Earnings to Growth Ratio"))
-        newFile.write(":")
-        newFile.write(str("Debt to Equity"))
-        newFile.write(":")
-        newFile.write(str("Cash Per Share"))
-        newFile.write(":")
-        newFile.write(str("Revenue Growth"))
-        newFile.write(":")
-        newFile.write(str("Gross Profits"))
-        newFile.write(":")
-        newFile.write(str("Profit Margin"))
-        newFile.write(":")
-        newFile.write(str("Return on Assets"))
-        newFile.write(":")
-        newFile.write(str("Current Ratio"))
-        newFile.write("\n")
-    os.chdir('..')
-    file = open('Nasdaq.txt')
-    os.chdir(r"Stocks")
-    for line in file:
-        text = file.readline()
-        text = text.replace("\n", "")
-               
-           
-        
-        with open(text + ".json") as jFile:
-            data = json.load(jFile)
-            counter = 0
-            for x in data:
-                os.chdir("..")
-                os.chdir(r"QueryResults")
-                if counter > 0:
-                 with open(r'Data.txt', "a+") as newFile:
-                    newFile.write(str(data[x]))
-                    newFile.write(":")
-                counter += 1
-            with open(r'Data.txt', "a+") as newFile:
-                     newFile.write("\n")
-            os.chdir('..')
-            os.chdir(r'stocks')
-        print(str(text + ".json"+" Processed") )  
-        
-    
-
+    except FileNotFoundError : #Happens when the list file doesn't exist
+         print("Entered File doesn't Exist")
+         os.chdir(dname)
+         nullCount += 1
+         
     print("\n\n\n\n\nResults Processed")
+    print("NullCount is: "+str(nullCount))
 
+def fileHeader(folderName,dname):
+        #Navigate to queryResults
+    os.chdir(dname)
+    os.chdir(r"QueryResults")
+    #First row in the final file
+    csvName = folderName+'-'+str(date.today())+".csv"
+    newFile = open(csvName,"w")
+    with newFile:
+        writer = csv.writer(newFile)
+        header = ['Ticker',str("Current Price"),str("1 Year Target"),str("Beta"),str("Earnings Per Share"),str("Price to Book"),str("Price/Earnings to Growth Ratio"),
+                  str("Debt to Equity"),str("Cash Per Share"),str("Revenue Growth"),str("Gross Profits"),str("Profit Margin"),str("Return on Assets"),str("Current Ratio"),str("Quick Ratio")]
+        writer.writerow(header)
+    return csvName
 
 if __name__ == '__main__':
-    main()
+    main(folderName,dname)

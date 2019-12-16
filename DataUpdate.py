@@ -1,4 +1,3 @@
-import pywinauto as auto
 import os
 import time
 import yahoo_finance as yahoo
@@ -22,17 +21,31 @@ import yahoo_finance as yahoo
 ##            yahoo.main(text)
 ##       file.close()
 
-def listUpdate():
-      os.chdir(r"Lists")
-      listFile()
-      entry = input("What is the File Name of the .txt file? (leave out the .txt): ")
-      file = open(entry+".txt")
-      for line in file:
-            text = file.readline()
-            text = text.replace("\n","")
-            os.chdir("..")
-            yahoo.main(text)
-      file.close()
+def listUpdate(entry,dname):
+      os.chdir(dname)
+      os.chdir(r"Stocks")
+      if not os.path.isdir(entry):
+            os.mkdir(entry)
+      try:
+            os.chdir(dname)
+            os.chdir(r"Lists")
+            file = open(entry+".txt")
+            for line in file:
+                  text = line
+                  text = text.replace("\n","")
+                  try:      
+                        yahoo.main(text,entry,dname)
+                  except:
+                        print(text+" Parsing Failed.")
+            file.close()
+            print("Exiting File....")
+            
+      except :
+            print("Entered File Name Doesn't Exist")
+                  
+            
+            
+
 def listFile():
         file_list = os.listdir()
         print(file_list)

@@ -4,17 +4,19 @@ from time import sleep
 import json
 import argparse
 from collections import OrderedDict
-from time import sleep
 import os
 
-def main(ticker):
+def main(ticker,tFileName,dname):
     print("Fetching data for %s" % (ticker))
     scraped_data = parse(ticker)
+    scraped_data.pop("") #The first entry pulls junk data. Keeps it out of the .json
     print("Writing data to output file")
+    os.chdir(dname)
     os.chdir(r"stocks")
+    os.chdir(tFileName)
     with open('%s.json' % (ticker), 'w') as fp:
         json.dump(scraped_data, fp, indent=4)
-        
+    os.chdir("..")   
 
 def parse(ticker):
     url = "http://finance.yahoo.com/quote/%s?p=%s" % (ticker, ticker)
@@ -90,6 +92,10 @@ def parse(ticker):
             currentRatio = json_loaded_summary["quoteSummary"]["result"][0]["financialData"]["currentRatio"]['raw']
         except:
             currentRatio = "N/A"
+        try:
+            quickRatio = json_loaded_summary["quoteSummary"]["result"][0]["financialData"]["quickRatio"]['raw']
+        except:
+            quickRatio = "N/A"
         for table_data in summary_table:
             raw_table_key = table_data.xpath('.//td[contains(@class,"C(black)")]//text()')
             raw_table_value = table_data.xpath('.//td[contains(@class,"Ta(end)")]//text()')
@@ -98,17 +104,17 @@ def parse(ticker):
             summary_data.update({table_key: table_value})
             
             summary_data.update(
-                {'ticker': ticker, 'y_Target_Est': y_Target_Est, 'currentPrice': currentPrice, 'beta': beta,
+                {'ticker': ticker, 'currentPrice': currentPrice,'y_Target_Est': y_Target_Est,'beta': beta,
                  'eps': eps, 'pBook': pBook,
                  'pegRatio': pegRatio, 'dEquity': dEquity,
                  'cashPerShare': cashPerShare, 'rGrowth': rGrowth,
                  'grossProfits': grossProfits, 'profitMargins': profitMargins, 'returnOnAssets': returnOnAssets,
-                 'currentRatio': currentRatio})
+                 'currentRatio': currentRatio,'quickRatio': quickRatio})
             return summary_data
 
 
     except:
-        print("Failed to parse json response, Dumbass")
+        print("Failed to parse json response")
         return {"error": "Failed to parse json response"}
 
 
