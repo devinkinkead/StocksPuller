@@ -27,3 +27,5 @@ argparse
 Collections
 csv
 datetime
+
+All of these can be found in Python's Pip. You will need Python 3.
