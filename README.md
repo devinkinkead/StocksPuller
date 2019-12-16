@@ -14,7 +14,7 @@
  
  Cruncher.py - Processes .json file information, and writes it into an .csv file
  
- MainMenuAll.py - This is purely for automation. It will process all text files in the "Lists" folder upon running it. It invokes DataUpdate.py and Cruncher.py. I use this combined with Windows Task Sceduler on one of my virual machines to provide myself with daily reports about stocks.
+ MainMenuAll.py - This is purely for automation. It will process all text files in the "Lists" folder upon running it (see zip folder). It invokes DataUpdate.py and Cruncher.py. I use this combined with Windows Task Sceduler on one of my virual machines to provide myself with daily reports about stocks.
  
 If you want to try this out for yourself, please download the included .zip folder. All required libraries can be installed on pip.
 
