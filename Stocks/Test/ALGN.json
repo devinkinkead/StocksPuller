@@ -1,0 +1,17 @@
+{
+    "ticker": "ALGN",
+    "currentPrice": 278.14,
+    "y_Target_Est": 269.73,
+    "beta": 2.067453,
+    "eps": 5.209,
+    "pBook": 16.789812,
+    "pegRatio": 2.68,
+    "dEquity": 4.371,
+    "cashPerShare": 9.927,
+    "rGrowth": 0.202,
+    "grossProfits": 1447867000,
+    "profitMargins": 0.18285,
+    "returnOnAssets": 0.14134,
+    "currentRatio": 1.73,
+    "quickRatio": 1.554
+}

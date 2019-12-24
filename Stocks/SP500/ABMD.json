@@ -1,0 +1,17 @@
+{
+    "ticker": "ABMD",
+    "currentPrice": 170.44,
+    "y_Target_Est": 226.6,
+    "beta": 0.32462,
+    "eps": 4.79,
+    "pBook": 7.7769666,
+    "pegRatio": 1.63,
+    "dEquity": 1.281,
+    "cashPerShare": 9.862,
+    "rGrowth": 0.128,
+    "grossProfits": 639865000,
+    "profitMargins": 0.26919,
+    "returnOnAssets": 0.15436,
+    "currentRatio": 5.769,
+    "quickRatio": 4.808
+}

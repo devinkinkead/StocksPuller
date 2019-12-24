@@ -1,0 +1,17 @@
+{
+    "ticker": "MSFT",
+    "currentPrice": 157.41,
+    "y_Target_Est": 163.13,
+    "beta": 1.231028,
+    "eps": 5.3,
+    "pBook": 11.330167,
+    "pegRatio": 1.99,
+    "dEquity": 80.68,
+    "cashPerShare": 17.907,
+    "rGrowth": 0.137,
+    "grossProfits": 82933000000,
+    "profitMargins": 0.31656,
+    "returnOnAssets": 0.10644,
+    "currentRatio": 2.854,
+    "quickRatio": 2.679
+}

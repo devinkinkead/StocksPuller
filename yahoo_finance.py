@@ -5,12 +5,12 @@ import argparse
 from collections import OrderedDict
 import os
 
-def main(ticker,tFileName,dname):
+def main(ticker,tFileName,dName):
     print("Fetching data for %s" % (ticker))
     scraped_data = parse(ticker)
     scraped_data.pop("") #The first entry pulls junk data. Keeps it out of the .json
     print("Writing data to output file")
-    os.chdir(dname)
+    os.chdir(dName)
     os.chdir(r"stocks")
     os.chdir(tFileName)
     with open('%s.json' % (ticker), 'w') as fp:

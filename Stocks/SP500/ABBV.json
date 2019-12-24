@@ -1,0 +1,17 @@
+{
+    "ticker": "ABBV",
+    "currentPrice": 90.25,
+    "y_Target_Est": 95.3,
+    "beta": 0.952782,
+    "eps": 2.177,
+    "pBook": "N/A",
+    "pegRatio": 2.71,
+    "dEquity": "N/A",
+    "cashPerShare": 7.2,
+    "rGrowth": 0.03,
+    "grossProfits": 25035000000,
+    "profitMargins": 0.099029996,
+    "returnOnAssets": 0.13446,
+    "currentRatio": 1.153,
+    "quickRatio": 0.925
+}

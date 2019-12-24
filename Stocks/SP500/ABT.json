@@ -1,0 +1,17 @@
+{
+    "ticker": "ABT",
+    "currentPrice": 87.35,
+    "y_Target_Est": 94.53,
+    "beta": 1.112141,
+    "eps": 1.84,
+    "pBook": 4.8552055,
+    "pegRatio": 2.4,
+    "dEquity": 62.466,
+    "cashPerShare": 2.451,
+    "rGrowth": 0.055,
+    "grossProfits": 17919000000,
+    "profitMargins": 0.10499,
+    "returnOnAssets": 0.042150002,
+    "currentRatio": 1.536,
+    "quickRatio": 0.933
+}
