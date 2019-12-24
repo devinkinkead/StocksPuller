@@ -37,3 +37,4 @@ All of these can be found in Python's Pip. You will need Python 3. I am using Py
 
 
 -- NOTE: Please do not run multiple instances of the MainMenu script at once. It won't crash if you do this, but Yahoo Finance will end up delivering a bunch of null data, largely defeating the purpose of the program. Normally, i have a < 1% null query rate with a list of 3000 stocks. If i run multiple instances to process multiple files in parallel, the null query rate is closer to 20% or so. If you use a single instance of the either the MainMenu or MainMenuAll scripts to process each stock list in sequence, you will avoid this problem. 
+Adding an option for individual stocks shortly. 12/23 DK
