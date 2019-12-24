@@ -8,6 +8,7 @@ while True:
     os.chdir(dname)
     print("1. Query Current Results Only")
     print("2. Pull Current List Data and Query Results")
+    print("3. Get Data from Individual Stock and Save in Excel")
     print("q. quit")
           
     entry = input("What would you like to do?: ")
