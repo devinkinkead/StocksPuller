@@ -1,6 +1,7 @@
 import os
 import Cruncher as cruncher
 import DataUpdate as dataUpdate
+import shutil as folderDeleter
 while True:
     #Resets Path
     print()
@@ -10,6 +11,7 @@ while True:
     print("1. Query Current Results Only")
     print("2. Pull Current List Data and Query Results")
     print("3. Get Data from Individual Stock and Save in Excel")
+    print("4. Reset Stock Data and Excel Sheets")
     print("q. quit")
           
     entry = input("What would you like to do?: ")
@@ -42,6 +44,21 @@ while True:
         dataUpdate.individualUpdate(ticker,dName)
         cruncher.individualDataPull("individual",dName,ticker)
 
+    elif entry == '4':
+        os.chdir(dName)
+        print("Resetting Stocks Folder...")
+        if os.path.exists(r"Stocks"):
+            folderDeleter.rmtree(r"Stocks")
+            os.mkdir(r"Stocks")
+        else:
+            os.mkdir(r"Stocks")
+        print("Resetting Excel Sheets Folder...")
+        if os.path.exists(r"QueryResults"):
+            folderDeleter.rmtree(r"QueryResults")
+            os.mkdir(r"QueryResults")
+        else:
+            os.mkdir(r"QueryResults")
+            
     elif entry == 'q':
         break;
 
